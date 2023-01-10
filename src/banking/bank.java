@@ -9,16 +9,14 @@ public class bank {
 		throws IOException
 	{
 
-		BufferedReader bReader = new BufferedReader(
-			new InputStreamReader(System.in));
+		BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
 		String username = "";
 		int pw;
 		int acc_no;
 		int char;
 
 		while (true) {
-			System.out.println(
-				"\n ->|| Welcome to InBank ||<- \n");
+			System.out.println("\n ->|| Welcome to InBank ||<- \n");
 			System.out.println("1)Create Account");
 			System.out.println("2)Login Account");
 
@@ -29,64 +27,48 @@ public class bank {
 				switch (char) {
 				case 1:
 					try {
-						System.out.print(
-							"Enter Unique UserName:");
+						System.out.print("Enter Unique UserName:");
 						username = bReader.readLine();
-						System.out.print(
-							"Enter New Password:");
-						pw = Integer.parseInt(
-							bReader.readLine());
+						System.out.print("Enter New Password:");
+						pw = Integer.parseInt(bReader.readLine());
 
-						if (bankManagement.createAccount(
-								username, pw)) {
-							System.out.println(
-								"MSG : Account Created Successfully!\n");
+						if (bankManagement.createAccount(username, pw)) {
+							System.out.println("MSG : Account Created Successfully!\n");
 						}
 						else {
-							System.out.println(
-								"ERR : Account Creation Failed!\n");
+							System.out.println("ERR : Account Creation Failed!\n");
 						}
 					}
 					catch (Exception e) {
-						System.out.println(
-							" ERR : Enter Valid Data::Insertion Failed!\n");
+						System.out.println("ERR : Enter Valid Data::Insertion Failed!\n");
 					}
 					break;
 
 				case 2:
 					try {
-						System.out.print(
-							"Enter UserName:");
+						System.out.print("Enter UserName:");
 						username = bReader.readLine();
-						System.out.print(
-							"Enter Password:");
-						pw = Integer.parseInt(
-							bReader.readLine());
+						System.out.print("Enter Password:");
+						pw = Integer.parseInt(bReader.readLine());
 
-						if (bankManagement.loginAccount(
-								username, pw)) {
-							System.out.println(
-								"MSG : Logout Successfully!\n");
+						if (bankManagement.loginAccount(username, pw)) {
+							System.out.println("MSG : Logout Successfully!\n");
 						}
 						else {
-							System.out.println(
-								"ERR : login Failed!\n");
+							System.out.println("ERR : login Failed!\n");
 						}
 					}
 					catch (Exception e) {
-						System.out.println(
-							" ERR : Enter Valid Data::Login Failed!\n");
+						System.out.println("ERR : Enter Valid Data::Login Failed!\n");
 					}
-
 					break;
 
-				default:
+				default: 
 					System.out.println("Invalid Entry!\n");
 				}
 
 				if (char == 5) {
-					System.out.println(
-						"Exited Successfully!\n\n Thank You :)");
+					System.out.println("Exited Successfully!\n\n Thank You :)");
 					break;
 				}
 			}

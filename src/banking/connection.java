@@ -10,15 +10,12 @@ public class connection {
 		try {
 			
 			
-			String mysqlJDBCDriver
-				= "com.mysql.cj.jdbc.Driver"; //jdbc driver
-			String url
-				= "jdbc:mysql://localhost:3001/mydata"; //mysql url
+			String mysqlJDBCDriver = "com.mysql.cj.jdbc.Driver"; //jdbc driver
+			String url = "jdbc:mysql://localhost:3001/mydata"; //mysql url
 			String user = "root";	 //mysql username
 			String pass = ""; //mysql passcode
 			Class.forName(mysqlJDBCDriver);
-			gco = DriverManager.getConnection(url, user,
-											pass);
+			gco = DriverManager.getConnection(url, user, pass);
 		}
 		catch (Exception e) {
 			System.out.println("Connection Failed!");
